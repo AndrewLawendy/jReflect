@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>jReflect</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/bootstrap.min.css">
 </head>
 
 <body class="pt-5">
@@ -35,26 +35,28 @@
             </div>
         </div>
         <div class="container">
-            <div class="row" jrf-scope="Miyazaki">
-                <div class="col-sm-12 col-md-6 col-lg-4" jrf="char in ">
+            <div class="row" jrf-scope="miyazakiCharacters">
+                <div class="col-sm-12 col-md-6 col-lg-4" jrf-repeat="char in $root">
                     <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="#" class="card-img-top" alt={char.film}>
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <h5 class="card-title">{char.film}</h5>
+                            <p class="card-text">{char.synopsis}</p>
+                            <select name="" id="">
+                                <option value="" jrf-repeat="char in $root">{cahr.film}</option>
+                            </select>
                         </div>
                     </div>
                 </div>
             </div>
+            <div jrf-scope="Miyazaki-test"></div>
         </div>
     </main>
 
-    <script src="/js/jquery-3.3.1.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/jReflect.min.js"></script>
+    <script src="/js/jquery-3.3.1.js"></script>
+    <!-- <script src="/js/bootstrap.min.js"></script> -->
+    <!-- <script src="/js/popper.min.js"></script> -->
+    <script src="/js/jReflect.js"></script>
     <script src="/js/main.min.js"></script>
 </body>
 
